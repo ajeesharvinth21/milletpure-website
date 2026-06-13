@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,8 +23,18 @@ export default function Header() {
     >
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
         {/* Brand Logo */}
-        <div className="font-headline-md text-headline-md text-primary italic cursor-pointer">
-          MilletPure
+        <div className="flex items-center cursor-pointer">
+          <Image
+            src="/logo-10-10-v5.png"
+            alt="10/10 Millet Powder Logo"
+            width={140}
+            height={99}
+            className={`object-contain transition-all duration-300 ${
+              isScrolled ? "h-[44px] md:h-[50px]" : "h-[52px] md:h-[60px]"
+            }`}
+            style={{ width: "auto" }}
+            priority
+          />
         </div>
 
         {/* Desktop Navigation */}
